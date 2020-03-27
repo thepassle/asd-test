@@ -11,6 +11,9 @@
     <script type="module" src="./pwa-install.js"></script>
     <pwa-install><button>install pls</button></pwa-install>
     <script>
+      setTimeout(() => {
+        document.body.append(document.createElement('pwa-install'));
+      }, 3000)
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./sw.js').then(() => {

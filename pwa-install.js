@@ -17,6 +17,7 @@ class PwaInstallButton extends HTMLElement {
   connectedCallback() {
     this.addEventListener('click', this._handlePrompt.bind(this));
     window.addEventListener('beforeinstallprompt', e => {
+      console.log('connectedcallback');
       e.preventDefault();
       window.____pwa_install_button_deferred_prompt = e;
       this.removeAttribute('hidden');
