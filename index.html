@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lockdown</title>
+    <link rel="manifest" href="./manifest.json">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body>
+    <script type="module" src="./pwa-install.js"></script>
+    <pwa-install><button>install pls</button></pwa-install>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then(() => {
+            console.log('Service worker registered :-)');
+          }).catch(() => {
+            console.log('Service worker not registered :-(');
+          });
+        });
+      };
+    </script>
+  </body>
+</html>
