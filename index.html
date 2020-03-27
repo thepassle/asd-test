@@ -9,10 +9,11 @@
   </head>
   <body>
     <script type="module" src="./pwa-install.js"></script>
-    <pwa-install><button>install pls</button></pwa-install>
     <script>
       setTimeout(() => {
-        document.body.append(document.createElement('pwa-install'));
+        const lol = document.createElement('pwa-install')
+        lol.innerHTML = 'lol';
+        document.body.append(lol);
       }, 3000)
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
